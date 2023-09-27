@@ -1,0 +1,338 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+.navbar{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    height: 10vh
+    ;
+    top: 0%;
+}
+.navbar ul{
+    display: flex;
+    list-style: none;
+    margin: 20px 0px;
+}
+.logo{
+    color: whitesmoke;
+    font-size: 35px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+span{
+    color:blue;
+}
+nav ul li{
+    font-family: century;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    padding: 8px 25px;
+    transition: all .5s ease;
+    
+}
+nav ul li a:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px white;
+}
+.button{
+    background-color: blue;
+    color: whitesmoke;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: transform .4s;
+}
+.button:hover{
+    transform: scale(1.2);
+}
+#home{
+    min-height: 100vh; 
+    background-image: url(m1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    left 10%;
+}
+.content h1{
+    color: white;
+    font-size: 5rem;
+}
+.content h3{
+    font-size: 3rem;
+    color: white;
+}
+.content h4{
+    color: #fcfc;
+    font-size: 35px;
+}
+#about{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-bottom: 0;
+    background-color: black;
+   
+}
+#about h2{
+    font-size: 5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+#image{
+    display: flex;
+}
+#image img{
+    width: 470px;
+    height: 600px;
+    margin-left: 8%;
+
+}  
+#box{
+    
+    padding: 100px;
+    border-radius: 20px;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: 8%;
+    margin-top: 0%;
+    width: 600px;
+    height: auto;
+    background-color: rgb(136, 141, 141);
+}
+#box h5{ 
+    font-size: 30px;
+    color: crimson;
+
+}    
+#box h5 br p{
+    padding-top: 3px;
+    font-size: 27px;
+    color: blue;
+}  
+#box  h3{
+    font-size: 29px;
+    color: crimson;
+}
+#box  h3 ul{
+    display: flex;
+    list-style: disc;
+    color: black;
+} 
+#box  h3 ul li{
+    font-size: 1.5rem;
+    justify-content: space-between;
+    flex-wrap: row;
+    color: black;
+}
+#skills{
+    min-height: 100vh;
+    background-image: url(key1.jpg);
+    color: white;    
+}
+#skills h1{
+    font-size: 4rem;
+    text-align: center;
+}
+#skills  h4{
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 70px;
+}
+.container .card{
+    position: relative;
+    width: 220px;
+    height: 250px;
+    background: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .card .percent{
+    position: relative;
+    width: 150px;
+    height: 150px;
+   
+}
+.container .card .percent svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+
+}
+.container .card .percent svg circle{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 2;
+    stroke: #191919;
+    transform: translate(5px 5px);
+}
+.container .card .percent svg circle:nth-child(2){
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+    stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: initial;
+}
+@keyframes fadeIn{
+    0%{ 
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.dot{
+    position: absolute;
+    inset: 5px;
+    z-index: 10;
+    /* 360deg / 100 = 3.6 */
+    animation: animateDot 2s linear forwards;
+}
+@keyframes animateDot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(calc(3.6deg * var(--num)));
+    }
+}
+.dot::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr);
+}
+.number{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: initial;
+}
+.number h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 2.5em;
+}
+.number p{
+    font-weight: 300;
+    font-size: 0.75em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba (255,255,255,0.75);
+}
+#contact{
+    min-height: 100vh;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+#contact h1{
+    font-size: 4rem;
+    text-align: center;
+    color: white;
+
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+    margin: 20px 0px;
+}
+.form h2{
+    width: 480px;
+    font-family: sans-serif;
+    text-align: center;
+    color: #0051ff;
+    font-size: 25px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 2px;
+    padding: 8px;
+}
+.input{
+    padding: 12px;
+    margin: 15px;
+    width: 30%;
+    border: none;
+    outline: none;
+}
+.msg{
+    width:20% ;
+    padding: 10px;
+    margin:15px ;
+    border: none ;
+    outline: none ;
+}
+.submit{
+    padding: 10px;
+    width: 10%;
+    margin: 40px;
+    border: none;
+    outline: none;
+}
+.submit :hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px white;
+}
+.footer{
+    color: blue;
+    height: 100px;
+    background-color: darkgrey;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    font-size: 20px;
+}
+.me{
+    padding-top: 10px;
+    text-align: center;
+}
